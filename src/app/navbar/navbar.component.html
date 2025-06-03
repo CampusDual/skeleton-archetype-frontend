@@ -1,0 +1,6 @@
+<nav class="navbar">
+    <a routerLink="/">🏠 Home</a>
+    <a *ngIf="!isLoggedIn" routerLink="/login">🔐 Sign in</a>
+    <a *ngIf="!isLoggedIn" routerLink="/register">📝 Sign up</a>
+    <a *ngIf="isLoggedIn" (click)="logout()">🚪 Logout</a>
+</nav>

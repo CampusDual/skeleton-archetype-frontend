@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>Sign up</h2>
+    <form (ngSubmit)="register()">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" [(ngModel)]="username" name="username" required />
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" [(ngModel)]="password" name="password" required />
+        </div>
+
+        <div class="form-group">
+            <label for="repeatPassword">Repeat password:</label>
+            <input type="password" id="repeatPassword" [(ngModel)]="repeatPassword" name="repeatPassword" required />
+        </div>
+
+        <button type="submit" [disabled]="password !== repeatPassword">
+            Sign up
+        </button>
+
+        <p class="error" *ngIf="error">{{ error }}</p>
+        <p class="success" *ngIf="success">{{ success }}</p>
+    </form>
+
+    <a routerLink="/login">Already have an account? Sign in</a>
+</div>

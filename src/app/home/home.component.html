@@ -1,0 +1,10 @@
+<div class="home-container">
+    <h1 *ngIf="username; else notLogged">Welcome, {{ username }}</h1>
+    <ng-template #notLogged>
+        <h1>Welcome to the app</h1>
+    </ng-template>
+
+    <button (click)="publicRequest()">Public request</button>
+    <button *ngIf="username" (click)="privateRequest()">Private request</button>
+    <p *ngIf="message">{{ message }}</p>
+</div>
